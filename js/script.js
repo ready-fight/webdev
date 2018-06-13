@@ -205,27 +205,165 @@
 //
 //emilyFormal('afternoon');
 //
-var years = [2008, 1965, 1937, 2005, 1998];
+//var years = [2008, 1965, 1937, 2005, 1998];
+//
+//function arrayCalc(arr, fn) {
+//    var arrRes = [];
+//    for(var i = 0; i < arr.length; i++) {
+//        arrRes.push(fn(arr[i]));
+//    }
+//    return arrRes;
+//}
+//
+//function calculateAge(el) {
+//    return new Date().getFullYear() - el;
+//}
+//
+//function isFullAge(limit, el) {
+//    console.log("This is el: " + el);
+//    return el >= limit;
+//}
+//
+//var ages = arrayCalc(years, calculateAge);
+//
+//var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
+//
+//console.log(fullJapan);
 
-function arrayCalc(arr, fn) {
-    var arrRes = [];
-    for(var i = 0; i < arr.length; i++) {
-        arrRes.push(fn(arr[i]));
+/*
+(function(){
+    function Question(question, answers, correct) {
+        this.question = question;
+        this.answers = answers;
+        this.correct = correct;
     }
-    return arrRes;
-}
 
-function calculateAge(el) {
-    return new Date().getFullYear() - el;
-}
+    Question.prototype.displayQuestion = function() {
+        console.log(this.question);
 
-function isFullAge(limit, el) {
-    console.log("This is el: " + el);
-    return el >= limit;
-}
+        for(var i = 0; i < this.answers.length; i++) {
+            console.log(i + ': ' + this.answers[i]);
+        }
+    }
 
-var ages = arrayCalc(years, calculateAge);
+    Question.prototype.checkAnswer = function(ans) {
+        if(ans === this.correct) {
+            console.log('Correct answer!');
+        } else {
+            console.log('Wrong answer. Try again. :)');
+        }
+    }
 
-var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
+    var q1 = new Question('Who is my best friend?', ['Seiji', 'Mike', 'Alex'], 0);
 
-console.log(fullJapan);
+    var q2 = new Question('What is my mother\'s name?', ['Bell', 'Sally', 'Iris'], 2);
+
+    var q3 = new Question('Where do I work?', ['Nagoya', 'Osaka', 'Tokyo'], 1);
+
+    var questions = [q1, q2, q3];
+
+    var n = Math.floor(Math.random() * questions.length);
+
+    questions[n].displayQuestion();
+
+    var answer = parseInt(prompt('Please select the correct answer.'));
+    questions[n].checkAnswer(answer);
+})();
+*/
+
+(function(){
+    function Question(question, answers, correct) {
+        this.question = question;
+        this.answers = answers;
+        this.correct = correct;
+    }
+
+    Question.prototype.displayQuestion = function() {
+        console.log(this.question);
+
+        for(var i = 0; i < this.answers.length; i++) {
+            console.log(i + ': ' + this.answers[i]);
+        }
+    }
+
+    Question.prototype.checkAnswer = function(ans, callback) {
+        if(ans === this.correct) {
+            var sc;
+            console.log('Correct answer!');
+            sc = callback(true);
+        } else {
+            console.log('Wrong answer. Try again. :)');
+            sc = callback(false);
+        }
+        this.displayScore(sc);
+    }
+
+    var q1 = new Question('Who is my best friend?', ['Seiji', 'Mike', 'Alex'], 0);
+
+    var q2 = new Question('What is my mother\'s name?', ['Bell', 'Sally', 'Iris'], 2);
+
+    var q3 = new Question('Where do I work?', ['Nagoya', 'Osaka', 'Tokyo'], 1);
+    
+    var questions = [q1, q2, q3];
+    
+    function score() {
+        var sc = 0;
+        return function(correct) {
+            if(correct) {
+                sc++;
+            }
+            return sc;
+        }
+    }
+    
+    Question.prototype.displayScore = function(score) {
+        console.log('Your current score: ' + score);
+        console.log('------------------------------------');
+    }
+    
+    var keepScore = score();
+    
+    function nextQuestion() {
+
+        var n = Math.floor(Math.random() * questions.length);
+
+        questions[n].displayQuestion();
+
+        var answer = prompt('Please select the correct answer.');
+        
+        if(answer !== 'exit') {
+            questions[n].checkAnswer(parseInt(answer), keepScore);
+            nextQuestion(); 
+        }
+        
+    }
+    
+    nextQuestion();
+})();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
