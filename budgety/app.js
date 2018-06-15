@@ -23,19 +23,25 @@ var budgetController = (function() {
         }
     };
     
-})();
-
-
-var data = {
-        allItems: {
-            exp: [],
-            inc: []
-        },
-        totals: {
-            exp: 0,
-            inc: 0
-        }
+    return {
+        addItem: function(type, des, val) {
+            var newItem, ID;
+            
+            ID = data.allItems[type][data.allItems.length - 1].id + 1;
+            
+            if(type === 'exp') {
+                newItem = new Expense(ID, des, val);
+            } else if(type === 'inc') {
+                newItem = new Income(ID, des, val);
+            }
+            
+            data.allItems[type].push(newItem);
+            return newItem;
+            
+        };
     };
+    
+})();
 
 var UIController = (function() {
     var DOMstrings = {
@@ -76,6 +82,8 @@ var controller = (function(budgetCtrl, UICtrl) {
     
     var ctrlAddItem = function() {
         var input = UICtrl.getInput();
+        
+        budgetCtrl.addItem(input.type, input.description, input.value)
         console.log(input);
     };
     
