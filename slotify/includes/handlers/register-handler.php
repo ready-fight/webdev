@@ -2,6 +2,7 @@
 
     // Classes
     require 'includes/classes/Account.php';
+    require 'includes/classes/Constants.php';
     $account = new Account();
 
     function sanitizeFormPassword($password) {
@@ -40,7 +41,17 @@
         $password = sanitizeFormPassword($_POST['password']);
         $password2 = sanitizeFormPassword($_POST['password2']);
 
-        $account->register($username, $firstName, $lastName, $email,
+        /** 
+         * success : Successfully inserted account information into the Database.
+        */
+
+        $success = $account->register($username, $firstName, $lastName, $email,
         $email2, $password, $password2);
+
+        if($success == true) {
+            header("Location: index.php");
+        } else {
+            
+        }
     }
 ?>
