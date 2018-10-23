@@ -1,7 +1,7 @@
 <?php
     // Handlers
-    require 'includes/handlers/login-handler.php';
-    require 'includes/handlers/register-handler.php';
+    require "includes/handlers/login-handler.php";
+    require "includes/handlers/register-handler.php";
 ?>
 
 <html lang="en">

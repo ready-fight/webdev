@@ -1,9 +1,9 @@
 <?php
-
+    require "includes/config.php";
     // Classes
     require 'includes/classes/Account.php';
     require 'includes/classes/Constants.php';
-    $account = new Account();
+    $account = new Account($con);
 
     function sanitizeFormPassword($password) {
         $password = strip_tags($password);
