@@ -1,7 +1,7 @@
 <?php
     ob_start();
 
-    $timezone = date_default_timezone_set("America/New_York");
+    $timezone = date_default_timezone_set("Asia/Tokyo");
 
     $con = mysqli_connect("localhost", "root", "root", "slotify");
 
