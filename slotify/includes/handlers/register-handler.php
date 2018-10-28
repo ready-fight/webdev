@@ -1,8 +1,11 @@
 <?php
-    require "includes/config.php";
+
+    // Database configuration
+    require_once 'includes/config.php';
+    
     // Classes
-    require 'includes/classes/Account.php';
-    require 'includes/classes/Constants.php';
+    require_once 'includes/classes/Account.php';
+    require_once 'includes/classes/Constants.php';
     $account = new Account($con);
 
     function sanitizeFormPassword($password) {
@@ -43,15 +46,15 @@
 
         /** 
          * success : Successfully inserted account information into the Database.
-        */
+         * 
+         */
 
         $success = $account->register($username, $firstName, $lastName, $email,
         $email2, $password, $password2);
 
         if($success == true) {
+            $_SESSION['userInfo'] = $userInfo;
             header("Location: index.php");
-        } else {
-            
         }
     }
 ?>

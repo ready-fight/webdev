@@ -1,12 +1,23 @@
 <?php
+
+    // Database configuration
+    require 'includes/config.php';
+
+    // Classes
+    require 'includes/classes/Account.php';
+    require 'includes/classes/Constants.php';
+
     // Handlers
-    require "includes/handlers/login-handler.php";
-    require "includes/handlers/register-handler.php";
+    require 'includes/handlers/register-handler.php';
+    require 'includes/handlers/login-handler.php';
 ?>
 
 <html lang="en">
 <head>
-    <title>Welcome to Slotify!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><?php echo Constants::$title; ?></title>
 </head>
 <body>
     <div id="inputContainer">
@@ -15,10 +26,10 @@
             
             <p>
                 <?php if(isset($_POST['loginButton'])) : ?>
-                <?php echo $account->getError() ?>
+                    <?php echo $account->getError() ?>
                 <?php endif; ?>
                 <label for="loginUsername">Username: </label>
-                <input id="loginUsername" name="loginUsername" type="text" placeholder="e.g. adrianRuiz" required />
+                <input id="loginUsername" name="loginUsername" type="text" placeholder="e.g. adrianRuiz" value="<?php $account->getInputValue('loginUsername'); ?>" required />
             </p>
             <p>
                 <label for="loginPassword">Password: </label>
@@ -34,7 +45,9 @@
             <h2>Create your account</h2>
             
             <p>
-                <?php echo $account->getError(); ?>
+            <?php if(isset($_POST['registerButton'])) : ?>
+                <?php echo $account->getError() ?>
+            <?php endif; ?>
                 <label for="username">Username: </label>
                 <input id="username" name="username" type="text" placeholder="e.g. adrianRuiz" value="<?php $account->getInputValue('username'); ?>" required />
             </p>

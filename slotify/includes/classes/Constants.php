@@ -1,6 +1,8 @@
 <?php
 
     class Constants {
+        public static $title = "Welcome to Slotify!";
+
         public static $passwordsDoNotMatch = "Your passwords do not match.";
         public static $passwordNotAlphanumeric = "Your password can only contain numbers and letters.";
         public static $passwordCharacters = "Your password must be between 5 and 30 characters.";
