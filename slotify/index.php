@@ -18,15 +18,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo Constants::$title; ?></title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-    <h1>Welcome to Slotify -- User Page</h1>
-    <p>
-        User Info: <?php echo $userLoggedIn; ?>
-    </p>
+    <div id="nowPlayingBarContainer">
 
-    <p>
-        <button name="Logout">Logout</button>
-    </p>
+        <div id="nowPlayingBar">
+            <div id="nowPlayingLeft">
+
+            </div>
+
+            <div id="nowPlayingCenter">
+                
+            </div>
+
+            <div id="nowPlayingRight">
+            
+            </div>
+        </div>
+    
+    </div>
 </body>
 </html>
