@@ -44,7 +44,7 @@
             if(!empty($this->errorArray)) {
                 echo "<ul>";
                 foreach($this->errorArray as $error) {
-                    echo "<li>$error</li>";
+                    echo "<li class='errorMessage'>$error</li>";
                 }
                 echo "</ul>";
             }

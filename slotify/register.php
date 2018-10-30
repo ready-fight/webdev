@@ -19,8 +19,35 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo Constants::$title; ?></title>
     <link rel="stylesheet" type="text/css" href="assets/css/register.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="assets/js/register.js"></script>
 </head>
 <body>
+
+    <?php
+        if(isset($_POST['registerButton'])) {
+            echo '
+        <script>
+            $(document).ready(function() {
+    
+                $("#loginForm").hide();
+                $("#registerForm").show();
+    
+            });
+        </script>';
+        } else {
+            echo '
+        <script>
+            $(document).ready(function() {
+    
+                $("#loginForm").show();
+                $("#registerForm").hide();
+    
+            });
+        </script>';
+        }
+    ?>
+
     <div id="background">
         <div id="loginContainer">
             <div id="inputContainer">
@@ -97,7 +124,16 @@
 
                 </form>
             </div>
-            <div id="clearfix"></div>
+            <!-- <div id="clearfix"></div> -->
+            <div id="loginText">
+                <h1>Get great music, right now.</h1>
+                <h2>Listen to loads of music, for free.</h2>
+                <ul>
+                    <li>Discover music you'll fall in love with.</li>
+                    <li>Create your own playlists.</li>
+                    <li>Follow artists to keep up to date.</li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>
