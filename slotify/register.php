@@ -10,6 +10,10 @@
     // Handlers
     require 'includes/handlers/register-handler.php';
     require 'includes/handlers/login-handler.php';
+
+    if(isset($_SESSION['userLoggedIn'])) {
+        header('Location: index.php');
+    }
 ?>
 
 <html lang="en">
