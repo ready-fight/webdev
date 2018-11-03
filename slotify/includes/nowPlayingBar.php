@@ -4,7 +4,7 @@
         <div id="nowPlayingLeft">
             <div class="content">
                 <span class="albumLink">
-                    <img src="https://www.mastlight.com/images/sqrimg.jpg" alt="" class="albumArtwork">
+                    <img src="assets/images/albums/square.jpg" alt="" class="albumArtwork">
                 </span>
 
             <div class="trackInfo">
