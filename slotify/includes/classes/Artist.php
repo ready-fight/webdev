@@ -9,11 +9,8 @@
         }
 
         public function getName() {
-            $artistQuery = mysqli_query($this->$con, "SELECT * FROM artists where id='$this->id'");
+            $artistQuery = mysqli_query($this->con, "SELECT * FROM artists where id='$this->id'");
             $artist = mysqli_fetch_array($artistQuery);
             return $artist['name'];
         }
-
-
-
     }

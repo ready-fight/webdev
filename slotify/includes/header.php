@@ -3,6 +3,8 @@
     require 'includes/config.php';
 
     // Classes
+    require 'includes/classes/Artist.php';
+    require 'includes/classes/Album.php';
     require 'includes/classes/Constants.php';
 
     if(isset($_SESSION['userLoggedIn'])) {
