@@ -19,10 +19,25 @@
 
     <div class="rightSection">
         <h2><?php echo $album->getTitle(); ?></h2>
-        <span>By <?php echo $artist->getName(); ?></span>
+        <p>By <?php echo $artist->getName(); ?></p>
+        <p><?php echo $album->getNumberOfSongs(); ?> songs</p>
     </div>
-
 </div>
 
+<div class="tracklistContainer">
+    <ul class="tracklist">
+        <?php 
+            $songIdArray = $album->getSongIds();
+
+            foreach($songIdArray as $songId) {
+                $albumSong = new Song($con, $songId);
+                $albumArtist = $albumSong->getArtist();
+
+                echo "<li></li>";
+            }
+
+        ?>
+    </ul>
+</div>
 
 <?php require 'includes/footer.php'; ?>

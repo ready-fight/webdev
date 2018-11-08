@@ -35,4 +35,21 @@
         public function getArtworkPath() {
             return $this->artworkPath;
         }
+
+        public function getNumberOfSongs() {
+            $query = mysqli_query($this->con, "SELECT * FROM songs where album='$this->id'");
+            return mysqli_num_rows($query);
+        }
+
+        public function getSongIds() {
+            $query = mysqli_query($this->con, "SELECT id FROM songs where album='$this->id' ORDER BY albumOrder ASC");
+
+            $array = [];
+
+            while($row = mysqli_fetch_array($query)) {
+                array_push($array, $row['id']);
+            }
+
+            return $array;
+        }
     }
