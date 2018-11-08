@@ -29,11 +29,11 @@
         }
 
         public function getArtist() {
-            return new Artist($this->con, $artistId);
+            return new Artist($this->con, $this->artistId);
         }
 
         public function getAlbum() {
-            return new Album($this->con, $albumId);
+            return new Album($this->con, $this->albumId);
         }
 
         public function getDuration() {
