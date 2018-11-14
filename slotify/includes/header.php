@@ -22,9 +22,10 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title><?php echo Constants::$title; ?></title>
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="assets/js/script.js"></script>
     </head>
     <body>
-
         <div id="mainContainer">
             <div id="topContainer">
                 <?php require 'includes/navBarContainer.php'; ?>
