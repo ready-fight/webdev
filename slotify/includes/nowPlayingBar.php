@@ -14,11 +14,16 @@
     $(document).ready(function() {
         currentPlaylist = <?php echo $json; ?>;
         audioElement = new Audio();
-        setTrack(currentPlaylist[0], currentPlaylist, false);
+        setTrack(currentPlaylist[currentIndex], currentPlaylist, false);
+        updateVolumeProgressBar(audioElement.audio);
+
+        $("#nowPlayingBarContainer").on("mousedown touchstart mousemove touchmove", function(e) {
+            e.preventDefault();
+        });
         
         $(".playbackBar .progressBar").mousedown(function(){
-		mouseDown = true;
-	});
+            mouseDown = true;
+	    });
 
         $(".playbackBar .progressBar").mousemove(function(e){
             if(mouseDown) {
@@ -27,8 +32,28 @@
         });
 
         $(".playbackBar .progressBar").mouseup(function(e) {
-		timeFromOffset(e, this);
-	});
+		    timeFromOffset(e, this);
+        });
+        
+        $(".volumeBar .progressBar").mousedown(function(){
+            mouseDown = true;
+	    });
+
+        $(".volumeBar .progressBar").mousemove(function(e){
+            if(mouseDown) {
+                var percentage = e.offsetX / $(this).width();
+                if(percentage >= 0 && percentage <=1) {
+                    audioElement.audio.volume = percentage;
+                }
+            }
+        });
+
+        $(".volumeBar .progressBar").mouseup(function(e) {
+            var percentage = e.offsetX / $(this).width();
+            if(percentage >= 0 && percentage <=1) {
+                audioElement.audio.volume = percentage;
+            }
+	    });
 
         $(document).mouseup(function() {
             mouseDown = false;
@@ -41,6 +66,28 @@
         audioElement.setTime(seconds);
     }
 
+    function previousSong() {
+        if(currentIndex != 0) {
+            currentIndex--;
+        } else {
+            currentIndex = currentPlaylist.length - 1;
+        }
+
+        var trackToPlay = currentPlaylist[currentIndex];
+        setTrack(trackToPlay, currentPlaylist, true);
+    }
+
+    function nextSong() {
+        if(currentIndex == currentPlaylist.length - 1) {
+            currentIndex = 0;
+        } else {
+            currentIndex++;
+        }
+
+        var trackToPlay = currentPlaylist[currentIndex];
+        setTrack(trackToPlay, currentPlaylist, true);
+    }
+
     function setTrack(trackId, newPlaylist, play) {
         
         $.ajaxSetup(
@@ -50,6 +97,10 @@
         );
 
         $.post("includes/handlers/ajax/getSongJson.php", { songId : trackId }, function(data) {
+
+            currentIndex = currentPlaylist.indexOf(trackId);
+            console.log(currentIndex);
+
             var track = JSON.parse(data);
             $(".trackName span").text(track.title);
             
@@ -64,7 +115,7 @@
             });
 
             audioElement.setTrack(track);
-            playSong();
+            // playSong();
         });
 
         if(play == true) {
@@ -120,7 +171,7 @@
                         <img src="assets/images/icons/shuffle.png" alt="Shuffle">
                     </button>
 
-                    <button class="controlButton previous" title="Previous">
+                    <button class="controlButton previous" title="Previous" onclick="previousSong()">
                         <img src="assets/images/icons/previous.png" alt="Previous">
                     </button>
 
@@ -132,7 +183,7 @@
                         <img src="assets/images/icons/pause.png" alt="Pause">
                     </button>
 
-                    <button class="controlButton next" title="Next">
+                    <button class="controlButton next" title="Next" onclick="nextSong()">
                         <img src="assets/images/icons/next.png" alt="Next">
                     </button>
 
