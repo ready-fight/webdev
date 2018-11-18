@@ -1,6 +1,6 @@
 <?php 
     // phpinfo();
-    return;
+    // return;
     require 'includes/includedFiles.php';
 ?>
 
