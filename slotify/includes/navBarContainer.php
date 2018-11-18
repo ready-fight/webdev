@@ -1,8 +1,8 @@
 <div id="navBarContainer">
     <nav class="navBar">
-        <a href="index.php" class="logo" title="Slotify">
-            <img src="assets/images/icons/logo.png" alt="">
-        </a>
+        <span class="logo" title="Slotify">
+            <img src="assets/images/icons/logo.png" onclick="openPage('index.php')">
+        </span>
 
         <div class="group">
 

@@ -1,5 +1,7 @@
 <?php 
-    require 'includes/header.php';
+    // phpinfo();
+    return;
+    require 'includes/includedFiles.php';
 ?>
 
 <h1 class="pageHeadingBig">You Might Also Like</h1>

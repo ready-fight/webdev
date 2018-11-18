@@ -177,6 +177,7 @@ body {
 
 .logo {
     margin-bottom: 15px;
+    cursor: pointer;
 }
 
 .logo img {
