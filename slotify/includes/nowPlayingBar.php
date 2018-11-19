@@ -187,7 +187,6 @@
             });
 
             audioElement.setTrack(track);
-            debugger;
             if(play) {
                 playSong();
             }
