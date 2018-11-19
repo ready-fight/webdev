@@ -53,7 +53,6 @@
         $email2, $password, $password2);
 
         if($success == true) {
-            $_SESSION['userInfo'] = $userInfo;
             header("Location: index.php");
         }
     }
