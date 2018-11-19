@@ -6,7 +6,6 @@ var mouseDown = false;
 var currentIndex = 0;
 var repeat = false;
 var shuffle = false;
-var play = false;
 var currentVolume = 1;
 var userLoggedIn;
 
@@ -18,19 +17,13 @@ function openPage(url) {
 
 	var encodedUrl = encodeURI(url + "&userLoggedIn="+userLoggedIn);
 	$("#mainContent").load(encodedUrl);
-}
-
-function passTempPlaylist(trackId, playlist) {
-	
-	play = true;
-	$(".controlButton.play").hide();
-    $(".controlButton.pause").show();
-	setTrack(trackId.toString(), playlist);
+	$("body").scrollTop();
+	history.pushState(null, null, url);
 }
 
 function formatTime(seconds) {
 	var time = Math.round(seconds);
-	var minutes = Math.floor(time / 60); //Rounds down
+	var minutes = Math.floor(time / 60);
 	var seconds = time - (minutes * 60);
 
 	var extraZero = (seconds < 10) ? "0" : "";
@@ -61,7 +54,6 @@ function Audio() {
 	});
 
 	this.audio.addEventListener("canplay", function() {
-		//'this' refers to the object that the event was called on
 		var currentTime = formatTime(this.currentTime);
 		var duration = formatTime(this.duration);
 		$(".progressTime.current").text(currentTime);

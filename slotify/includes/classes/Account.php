@@ -17,9 +17,9 @@
             $stmt->bind_param("ss", $un, $pw);
             $stmt->execute();
             $result = $stmt->get_result();
-            $stmt->close();
 
-            if(mysqli_num_rows($result) == 1) {
+            if($result->num_rows === 1) {
+                $stmt->close();
                 return true;
             } else {
                 array_push($this->errorArray, Constants::$loginFailed);

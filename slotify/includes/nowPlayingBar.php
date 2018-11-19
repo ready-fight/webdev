@@ -14,14 +14,12 @@
     $(document).ready(function() {
         var newPlaylist = <?php echo $json; ?>;
         audioElement = new Audio();
-        setTrack(newPlaylist[0], newPlaylist);
+        setTrack(newPlaylist[0], newPlaylist, false);
         updateVolumeProgressBar(audioElement.audio);
         
-        $(".play").on("click", function() {
-            play = true;
-        });
-
-        $(".controlButton.previous")
+        // $(".play").on("click", function() {
+        //     playOnPause = true;
+        // });
 
         $("#nowPlayingBarContainer").on("mousedown touchstart mousemove touchmove", function(e) {
             e.preventDefault();
@@ -75,7 +73,7 @@
     }
 
     function previousSong() {
-        $(".playbackBar .progress").css("width", 0);
+        // $(".playbackBar .progress").css("width", 0);
 
         if(currentIndex != 0) {
             currentIndex--;
@@ -84,12 +82,10 @@
         }
 
         var trackToPlay = shuffle ? shufflePlaylist[currentIndex] : currentPlaylist[currentIndex];
-        setTrack(trackToPlay, currentPlaylist);
+        setTrack(trackToPlay, currentPlaylist, true);
     }
 
     function nextSong() {
-
-        $(".playbackBar .progress").css("width", 0);
 
         if(repeat) {
             audioElement.setTime(0);
@@ -105,7 +101,7 @@
         }
         
         var trackToPlay = shuffle ? shufflePlaylist[currentIndex] : currentPlaylist[currentIndex];
-        setTrack(trackToPlay, currentPlaylist);
+        setTrack(trackToPlay, currentPlaylist, true);
     }
     
     function setRepeat() {
@@ -155,23 +151,23 @@
         }
     }
 
-    function setTrack(trackId, newPlaylist) {
+    function setTrack(trackId, newPlaylist, play) {
         
         if(newPlaylist != currentPlaylist) {
             currentPlaylist = newPlaylist;
             shufflePlaylist = currentPlaylist.slice();
         }
 
-        $.ajaxSetup(
-            {
-                async: false
-            }
-        );
+        // $.ajaxSetup(
+        //     {
+        //         async: false
+        //     }
+        // );
 
         if(shuffle) {
-            currentIndex = shufflePlaylist.indexOf(trackId);
+            currentIndex = shufflePlaylist.indexOf(trackId.toString());
         } else {
-            currentIndex = currentPlaylist.indexOf(trackId);
+            currentIndex = currentPlaylist.indexOf(trackId.toString());
         }
         // pauseSong();
 
@@ -191,11 +187,13 @@
             });
 
             audioElement.setTrack(track);
-            // playSong();
+            debugger;
+            if(play) {
+                playSong();
+            }
         });
-        if(play) {
-            audioElement.play();
-        }
+        
+        
     }
 
     function playSong() {

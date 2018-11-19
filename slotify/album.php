@@ -1,5 +1,5 @@
 <?php 
-    require 'includes/header.php';
+    require 'includes/includedFiles.php';
 
     if(isset($_GET['id'])) {
         $albumId = $_GET['id'];
@@ -37,7 +37,7 @@
                 echo "
                 <li class='trackListRow'>
                     <div class='trackCount'>
-                        <img class='play' src='assets/images/icons/play-white.png' onclick='passTempPlaylist(" . $albumSong->getId().", tempPlaylist)'/>
+                        <img class='play' src='assets/images/icons/play-white.png' onclick='setTrack(". $albumSong->getId() .", tempPlaylist, true)'/>
                         <span class='trackNumber'>$i</span>
                     </div>
 
@@ -64,5 +64,3 @@
         </script>
     </ul>
 </div>
-
-<?php require 'includes/footer.php'; ?>

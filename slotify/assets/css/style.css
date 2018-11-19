@@ -199,6 +199,7 @@ body {
 }
 
 .navItemLink {
+    cursor: pointer;
     color: #a0a0a0;
     text-decoration: none;
 }
@@ -231,6 +232,7 @@ body {
 
 .gridViewItem {
     display: inline-block;
+    cursor: pointer;
     margin-right: 20px;
     width: 29%;
     max-width: 200px;
