@@ -1,7 +1,7 @@
 <div id="navBarContainer">
     <nav class="navBar">
         <span role="link" tabindex="0" onclick="openPage('index.php')" class="logo"  title="Slotify">
-            <img src="assets/images/icons/logo.png">
+            <img src="assets/images/icons/logo.png"">
         </span>
 
         <div class="group">
