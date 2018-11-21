@@ -15,7 +15,7 @@
         <div class="artistInfo">
             <h1 class="artistName"><?php echo $artist->getName(); ?></h1>
             <div class="headerButtons">
-                <button class="button green">PLAY</button>
+                <button class="button green" onclick="playFirstSong()">PLAY</button>
             </div>
         </div>
     </div>
@@ -77,7 +77,7 @@
             echo "
                 <div class='gridViewItem'>
                     <span role='link' tabindex='0' onclick='openPage(\"album.php?id=" . $row['id'] . "\")'>
-                        <img src='". $row['artworkPath'] . " />
+                        <img src='". $row['artworkPath'] . "' />
                         <div class='gridViewInfo'>"
                             . $row['title'] .
                         "</div>

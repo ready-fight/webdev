@@ -177,7 +177,6 @@ body {
 
 .logo {
     margin-bottom: 15px;
-    cursor: pointer;
 }
 
 .logo img {
@@ -232,7 +231,6 @@ body {
 
 .gridViewItem {
     display: inline-block;
-    cursor: pointer;
     margin-right: 20px;
     width: 29%;
     max-width: 200px;
@@ -401,4 +399,8 @@ body {
 .tracklistContainer h2,
 .gridViewContainer h2 {
     text-align: center;
+}
+
+[role="link"] {
+    cursor: pointer;
 }
