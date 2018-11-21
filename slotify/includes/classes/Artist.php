@@ -1,28 +1,36 @@
 <?php
-    class Artist {
-        private $con;
-        private $id;
+	class Artist {
 
-        public function __construct($con, $id) {
-            $this->con = $con;
-            $this->id = $id;
-        }
+		private $con;
+		private $id;
 
-        public function getName() {
-            $artistQuery = mysqli_query($this->con, "SELECT * FROM artists where id='$this->id'");
-            $artist = mysqli_fetch_array($artistQuery);
-            return $artist['name'];
-        }
+		public function __construct($con, $id) {
+			$this->con = $con;
+			$this->id = $id;
+		}
 
-        public function getSongIds() {
-            $query = mysqli_query($this->con, "SELECT id FROM songs where artist='$this->id' ORDER BY plays DESC");
+		public function getId() {
+			return $this->id;
+		}
 
-            $array = [];
+		public function getName() {
+			$artistQuery = mysqli_query($this->con, "SELECT name FROM artists WHERE id='$this->id'");
+			$artist = mysqli_fetch_array($artistQuery);
+			return $artist['name'];
+		}
+		
+		public function getSongIds() {
 
-            while($row = mysqli_fetch_array($query)) {
-                array_push($array, $row['id']);
-            }
+			$query = mysqli_query($this->con, "SELECT id FROM songs WHERE artist='$this->id' ORDER BY plays DESC");
 
-            return $array;
-        }
-    }
+			$array = array();
+
+			while($row = mysqli_fetch_array($query)) {
+				array_push($array, $row['id']);
+			}
+
+			return $array;
+
+		}
+	}
+?>
