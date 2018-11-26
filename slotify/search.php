@@ -22,7 +22,6 @@
     selector[0].setSelectionRange(carat, carat);
 
     $(function() {
-        var timer;
         $(".searchInput").keyup(function() {
             clearTimeout(timer);
             timer = setTimeout(function() {
@@ -32,6 +31,8 @@
         });
     });
 </script>
+
+<?php if($term == "") exit(); ?>
 
 <div class="tracklistContainer borderBottom">
     <h2>SONGS</h2>
@@ -90,31 +91,52 @@
 <h2>ARTISTS</h2>
 
 <?php
-$artistsQuery = mysqli_query($con, "SELECT id FROM artists WHERE name LIKE '$term%' LIMIT 10");
+    $artistsQuery = mysqli_query($con, "SELECT id FROM artists WHERE name LIKE '$term%' LIMIT 10");
 
-if(mysqli_num_rows($artistsQuery) == 0) {
-    echo "<span class='noResults'>No artists found matching " . $term . "</span>";
-}
+    if(mysqli_num_rows($artistsQuery) == 0) {
+        echo "<span class='noResults'>No artists found matching " . $term . "</span>";
+    }
 
-foreach($artistsQuery as $artistId) {
-    $artistFound = new Artist($con, $artistId['id']);
+    foreach($artistsQuery as $artistId) {
+        $artistFound = new Artist($con, $artistId['id']);
 
-    echo "<div class='searchResultRow'>
-            <div class='artistName'>
+        echo "<div class='searchResultRow'>
+                <div class='artistName'>
 
-                <span role='link' tabindex='0' onclick='openPage(\"artist.php?id=" . $artistFound->getId() ."\")'>
-                "
-                . $artistFound->getName() .
-                "
-                </span>
+                    <span role='link' tabindex='0' onclick='openPage(\"artist.php?id=" . $artistFound->getId() ."\")'>
+                    "
+                    . $artistFound->getName() .
+                    "
+                    </span>
 
-            </div>
+                </div>
 
-        </div>";
+            </div>";
 
-}
-
-
+    }
 ?>
 
+</div>
+
+<div class="gridViewContainer">
+    <h2>ALBUMS</h2>
+    <?php 
+        $albumQuery = mysqli_query($con, "SELECT * FROM albums where title LIKE '$term%' LIMIT 10");
+
+        if(mysqli_num_rows($albumQuery) == 0) {
+            echo "<span class='noResults'>No albums found matching " . $term . "</span>";
+        }
+
+        while($row = mysqli_fetch_array($albumQuery)) {
+            echo "
+                <div class='gridViewItem'>
+                    <span role='link' tabindex='0' onclick='openPage(\"album.php?id=" . $row['id'] . "\")'>
+                        <img src='". $row['artworkPath'] . "' />
+                        <div class='gridViewInfo'>"
+                            . $row['title'] .
+                        "</div>
+                    </span>
+                </div>";
+        }
+     ?>
 </div>
