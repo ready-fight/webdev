@@ -22,7 +22,6 @@
     selector[0].setSelectionRange(carat, carat);
 
     $(function() {
-        var timer;
         $(".searchInput").keyup(function() {
             clearTimeout(timer);
             timer = setTimeout(function() {
