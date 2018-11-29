@@ -4,6 +4,7 @@
 
     $alreadyCrawled = array();
     $crawling = array();
+    $alreadyFoundImages = array();
 
     function insertLink($url, $title, $description, $keywords) {
         global $con;
@@ -14,6 +15,19 @@
         $query->bindParam(":title", $title);
         $query->bindParam(":description", $description);
         $query->bindParam(":keywords", $keywords);
+
+        return $query->execute();
+    }
+
+    function insertImage($url, $src, $alt, $title) {
+        global $con;
+        
+        $query = $con->prepare("INSERT into images (siteUrl, imageUrl, alt, title)
+                                VALUES(:siteUrl, :imageUrl, :alt, :title)");
+        $query->bindParam(":siteUrl", $url);
+        $query->bindParam(":imageUrl", $src);
+        $query->bindParam(":alt", $alt);
+        $query->bindParam(":title", $title);
 
         return $query->execute();
     }
@@ -36,7 +50,7 @@
         } else if(substr($src, 0, 1) == "/") {
             $src = $scheme . "://" . $host . $src;
         } else if(substr($src, 0, 2 == "./")) {
-            $src = $scheme . "://" . $host . dirname(parse_url($url))['path'] . substr($src, 1);
+            $src = $scheme . "://" . $host . dirname(parse_url($url)['path']) . substr($src, 1);
         } else if(substr($src, 0, 3 == "../")) {
             $src = $scheme . "://" . $host . "/" . $src;
         } else if(substr($src, 0, 5) !=  "https" && substr($src, 0, 4) != "http") {
@@ -47,6 +61,9 @@
     }
 
     function getDetails($url) {
+
+        global $alreadyFoundImages;
+
         $parser = new DomDocumentParser($url);
         $titleArray = $parser->getTitleTags();
 
@@ -87,6 +104,25 @@
         } else {
             echo "ERROR: FAILED TO INSERT ($url)<br />";
         }
+
+        $imageArray = $parser->getImages();
+        foreach($imageArray as $image) {
+            $src = $image->getAttribute("src");
+            $alt = $image->getAttribute("alt");
+            $title = $image->getAttribute("title");
+
+            if(!$title && !$alt) {
+                continue;
+            }
+
+            $src = createLink($src, $url);
+
+            if(!in_array($src, $alreadyFoundImages)) {
+                $alreadyFoundImages[] = $src;
+                echo "INSERT: " . insertImage($url, $src, $alt, $title) . " ";
+            }
+
+        }
     }
 
     function followLinks($url) {
@@ -113,7 +149,7 @@
                 $alreadyCrawled[] = $href;
                 $crawling[] = $href;
                 getDetails($href);
-            } else return;
+            }
         }
 
         array_shift($crawling);
