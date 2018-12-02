@@ -159,6 +159,6 @@
         }
     }
     
-    $startUrl = "http://www.bbc.com";
+    $startUrl = "http://www.reecekenney.com";
     followLinks($startUrl);
 ?>

@@ -5,6 +5,7 @@
     if(isset($_GET["term"]) && !empty($_GET["term"])) {
         $term = $_GET["term"];
         $type = isset($_GET["type"]) && !empty($_GET["type"]) ? $_GET["type"] : "sites";
+        $page = isset($_GET["page"]) && !empty($_GET["page"]) ? $_GET["page"] : 1;
     } else {
         header("Location: index.php");
     }
@@ -58,11 +59,14 @@
         </div>
 
         <div class="mainResultsSection">
-            <?php 
+            <?php
                 $resultsProvider = new SiteResultsProvider($con);
+                $pageLimit = 20;
                 $numResults = $resultsProvider->getNumResults($term);
                 $resultOrResults = $numResults == 1 ? "result" : "results";
                 echo "<p class='resultCount'>$numResults $resultOrResults found.</p>";
+
+                echo $resultsProvider->getResultsHtml($page, $pageLimit, $term);
             ?>
         </div>
 
