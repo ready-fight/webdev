@@ -6,13 +6,13 @@ $(document).ready(function() {
         pagination: false
     });
 
-    var typed = new Typed(".typed", {
-        strings: ["Software Engineer", "Web Developer", "Game Programmer"],
-        typeSpeed: 70,
-        loop: true,
-        startDelay: 1000,
-        showCursor: false
-    });
+    // var typed = new Typed(".typed", {
+    //     strings: ["Software Engineer", "Web Developer", "Game Programmer"],
+    //     typeSpeed: 70,
+    //     loop: true,
+    //     startDelay: 1000,
+    //     showCursor: false
+    // });
 
     $('.owl-carousel').owlCarousel({
         loop:true,
@@ -34,8 +34,8 @@ $(document).ready(function() {
     });
 
     var skillsTopOffSet = $(".skillsSection").offset().top;
-
-    console.log(skillsTopOffSet);
+    var statsTopOffset = $(".statsSection").offset().top;
+    var countUpFinished = false;
 
     $(window).scroll(function(){
         if(window.pageYOffset >  skillsTopOffSet - $(window).height() + 200) {
@@ -51,6 +51,29 @@ $(document).ready(function() {
                 }
             });
         }
+
+        if(!countUpFinished && window.pageYOffset >  statsTopOffset - $(window).height() + 200) {
+            $(".counter").each(function() {
+                var element = $(this);
+                var endVal = parseInt(element.text());
+                
+                element.countup(endVal);
+            });
+            countUpFinished = true;
+        }
     });
+
+    $("[data-fancybox]").fancybox({
+        buttons: ["zoom", "fullScreen", "share", "download"]
+    });
+
+    // $(".items").isotope({
+    //     filter: '*',
+    //     animationOptions: {
+    //         duration: 1500,
+    //         easing: 'linear',
+    //         queue: false
+    //     }
+    // });
 
 });
