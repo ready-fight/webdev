@@ -1,3 +1,17 @@
+$(window).on("load", function() {
+    $(".loader .inner").fadeOut(500, function() {
+        $(".loader").fadeOut(750);
+    });
+    $(".items").isotope({
+        filter: '*',
+        animationOptions: {
+            duration: 1500,
+            easing: 'linear',
+            queue: false
+        }
+    });
+});
+
 $(document).ready(function() {
     
     $('#slides').superslides({
@@ -67,13 +81,48 @@ $(document).ready(function() {
         buttons: ["zoom", "fullScreen", "share", "download"]
     });
 
-    // $(".items").isotope({
-    //     filter: '*',
-    //     animationOptions: {
-    //         duration: 1500,
-    //         easing: 'linear',
-    //         queue: false
-    //     }
-    // });
+    $(".items").isotope({
+        filter: '*',
+        animationOptions: {
+            duration: 1500,
+            easing: 'linear',
+            queue: false
+        }
+    });
+
+    $("#filters a").click(function() {
+        $("#filters .current").removeClass("current");
+        $(this).addClass("current");
+
+        var selector = $(this).attr("data-filter");
+        $(".items").isotope({
+            filter: selector,
+            animationOptions: {
+                duration: 1500,
+                easing: 'linear',
+                queue: false
+            }
+        });
+        return false;
+    });
+
+    const nav = $("#navigation");
+    const navTop = nav.offset().top;
+    console.log($(window).scrollTop());
+    console.log(navTop);
+
+    $(window).on("scroll", stickyNavigation);
+
+    function stickyNavigation() {
+        const body = $("body");
+        
+        if($(window).scrollTop() >= navTop) {
+            body.css("padding-top", nav.outerHeight() + "px");
+            body.addClass("fixedNav");
+        } else {
+            body.css("padding-top", 0);
+            body.removeClass("fixedNav");
+        }
+    }
 
 });
