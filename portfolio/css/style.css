@@ -60,7 +60,7 @@
 
 .aboutImage {
     max-width: 100%;
-    border: 2px solid #444;
+    border: 2px solid #cfb997;
     box-shadow: 0 5px 5px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
 }
 
@@ -134,7 +134,7 @@
     font-size: 56px;
     margin-bottom: 10px;
     font-weight: 400;
-    color: #cfb997 ;
+    color: #cfb997;
 }
 
 .squareContent h3 {
@@ -390,11 +390,11 @@
 }
 
 @media (max-width: 990px) {
-    #navigation li {
-        padding-bottom: 20px;
+    #navigation ul {
+        margin-top: 10px;
     }
 
-    #navigation li:first-child {
-        margin-top: 15px;
-    }    
+    #navigation ul li {
+        margin-top: 10px;
+    }
 }
