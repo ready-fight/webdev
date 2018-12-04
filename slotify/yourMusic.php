@@ -29,10 +29,14 @@
             echo "
                 <div class='gridViewItem' role='link' tabindex='0' onclick='openPage(\"playlist.php?id=" . $playlist->getId() . "\")'>
                     <div class='playlistImage'>
-                        <img src='assets/images/icons/playlist.png' />
-                        <div class='gridViewInfo'>"
-                            . $playlist->getName() .
-                        "</div>
+                        <ul id='sortable' style='padding: 0; margin: 0; list-style: none'>
+                            <li>
+                                <img src='assets/images/icons/playlist.png' />
+                                <div class='gridViewInfo'>"
+                                . $playlist->getName() .
+                                "</div>
+                            </li>
+                        </ul>
                     </div>                    
                 </div>";
         }

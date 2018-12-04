@@ -130,3 +130,8 @@ function deletePlaylist(playlistId) {
 		});
 	}
 }
+
+$( function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  } );
