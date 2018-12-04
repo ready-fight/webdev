@@ -30,7 +30,7 @@
                 <div class='gridViewItem' role='link' tabindex='0' onclick='openPage(\"playlist.php?id=" . $playlist->getId() . "\")'>
                     <div class='playlistImage'>
                         <ul id='sortable' style='padding: 0; margin: 0; list-style: none'>
-                            <li>
+                            <li class='ui-state-default'>
                                 <img src='assets/images/icons/playlist.png' />
                                 <div class='gridViewInfo'>"
                                 . $playlist->getName() .
