@@ -11,6 +11,8 @@
     $owner = new User($con, $playlist->getOwner());
 ?>
 
+
+
 <div class="entityInfo">
     
     <div class="leftSection">

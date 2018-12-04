@@ -2,6 +2,14 @@
     require 'includes/includedFiles.php';
 ?>
 
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  } );
+  </script>
+
 <div class="playlistsContainer">
     <div class="gridViewContainer">
         <h2>PLAYLISTS</h2>
@@ -29,14 +37,10 @@
             echo "
                 <div class='gridViewItem' role='link' tabindex='0' onclick='openPage(\"playlist.php?id=" . $playlist->getId() . "\")'>
                     <div class='playlistImage'>
-                        <ul id='sortable' style='padding: 0; margin: 0; list-style: none'>
-                            <li class='ui-state-default'>
-                                <img src='assets/images/icons/playlist.png' />
-                                <div class='gridViewInfo'>"
-                                . $playlist->getName() .
-                                "</div>
-                            </li>
-                        </ul>
+                        <img src='assets/images/icons/playlist.png' />
+                        <div class='gridViewInfo'>"
+                        . $playlist->getName() .
+                        "</div>
                     </div>                    
                 </div>";
         }
