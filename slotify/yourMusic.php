@@ -2,14 +2,6 @@
     require 'includes/includedFiles.php';
 ?>
 
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#sortable" ).sortable();
-    $( "#sortable" ).disableSelection();
-  } );
-  </script>
-
 <div class="playlistsContainer">
     <div class="gridViewContainer">
         <h2>PLAYLISTS</h2>

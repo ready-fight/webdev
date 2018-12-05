@@ -22,6 +22,25 @@ $(window).scroll(function() {
 	hideOptionsMenu();
 });
 
+$(document).on("change", "select.playlist", function() {
+	var self = $(this);
+	var playlistId = $(this).val();
+	var songId = $(this).prev(".songId").val();
+	
+	$.post("includes/handlers/ajax/addToPlaylist.php", { playlistId : playlistId, songId : songId })
+	.done(function(error) {
+		hideOptionsMenu();
+		
+		if(error != "") {
+			alert(error);
+			return;
+		}
+
+		hideOptionsMenu();
+		$(self).val("");
+	});
+});
+
 function openPage(url) {
 
 	if(timer != null) {
@@ -36,6 +55,21 @@ function openPage(url) {
 	$("#mainContent").load(encodedUrl);
 	$("body").scrollTop();
 	history.pushState(null, null, url);
+}
+
+function removeFromPlaylist(button, playlistId) {
+	var songId = $(button).prevAll(".songId").val();
+
+	$.post("includes/handlers/ajax/removeFromPlaylist.php", { playlistId: playlistId, songId: songId })
+		.done(function(error) {
+
+			if(error != "") {
+				alert(error);
+				return;
+			}
+
+			openPage("playlist.php?id=" + playlistId);
+		});
 }
 
 function createPlaylist() {
@@ -63,8 +97,10 @@ function hideOptionsMenu() {
 }
 
 function showOptionsMenu(button) {
+	var songId = $(button).prevAll(".songId").val();
 	var menu = $(".optionsMenu");
 	var menuWidth = menu.width();
+	menu.find(".songId").val(songId);
 
 	var scrollTop = $(window).scrollTop();
 	var elementOffset = $(button).offset().top;
@@ -163,7 +199,36 @@ function deletePlaylist(playlistId) {
 	}
 }
 
-$( function() {
-    $( "#sortable" ).sortable();
-    $( "#sortable" ).disableSelection();
-  } );
+function updateEmail(emailClass) {
+	var emailValue = $("." + emailClass).val();
+
+	$.post("includes/handlers/ajax/updateEmail.php", {
+		email: emailValue, 
+		username: userLoggedIn
+	})
+	.done(function(response) {
+		$("." + emailClass).nextAll(".message").text(response);
+	});
+}
+
+function updatePassword(oldPasswordClass, newPasswordClass1, newPasswordClass2) {
+	var oldPassword = $("." + oldPasswordClass).val();
+	var newPasswordClass1 = $("." + newPasswordClass1).val();
+	var newPasswordClass2 = $("." + newPasswordClass2).val();
+
+	$.post("includes/handlers/ajax/updatePassword.php", {
+		oldPassword: oldPassword, 
+		newPassword1: newPasswordClass1,
+		newPassword2: newPasswordClass2,
+		username : userLoggedIn
+	})
+	.done(function(response) {
+		$("." + oldPasswordClass).nextAll(".message").text(response);
+	});
+}
+
+function logout() {
+	$.post("includes/handlers/ajax/logout.php", function() {
+		location.reload();
+	});
+}

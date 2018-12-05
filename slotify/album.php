@@ -48,6 +48,7 @@
                     </div>
 
                     <div class='trackOptions'>
+                        <input type='hidden' class='songId' value='". $albumSong->getId() . "' />
                         <img class='optionsButton' onclick='showOptionsMenu(this)' src='assets/images/icons/more.png' />
                     </div>
 
@@ -68,5 +69,5 @@
 
 <nav class="optionsMenu">
     <input type="hidden" class="songId" />
-    <div class="item">Add to playlist</div>
+    <?php echo Playlist::getPlaylistsDropdown($con, $userLoggedIn->getUserName()); ?>
 </nav>

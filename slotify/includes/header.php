@@ -7,12 +7,14 @@
     require 'includes/classes/Album.php';
     require 'includes/classes/Song.php';
     require 'includes/classes/Constants.php';
+    require 'includes/classes/User.php';
 
     if(isset($_SESSION['userLoggedIn'])) {
-        $userLoggedIn = $_SESSION['userLoggedIn'];
+        $userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
+        $username = $userLoggedIn->getUsername();
         echo "
             <script>
-                userLoggedIn = '$userLoggedIn'; 
+                userLoggedIn = '$username'; 
             </script>";
     } else {
         header('Location: register.php');
@@ -27,7 +29,6 @@
         <title><?php echo Constants::$title; ?></title>
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="assets/js/script.js"></script>
     </head>
     <body>

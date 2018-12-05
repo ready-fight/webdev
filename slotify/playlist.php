@@ -52,7 +52,8 @@
                     </div>
 
                     <div class='trackOptions'>
-                        <img class='optionsButton' src='assets/images/icons/more.png' />
+                        <input type='hidden' class='songId' value='". $playlistSong->getId() . "' />
+                        <img class='optionsButton' onclick='showOptionsMenu(this)' src='assets/images/icons/more.png' />
                     </div>
 
                     <div class='trackDuration'>
@@ -69,3 +70,9 @@
         </script>
     </ul>
 </div>
+
+<nav class="optionsMenu">
+    <input type="hidden" class="songId" />
+    <!-- <?php echo Playlist::getPlaylistsDropdown($con, $userLoggedIn->getUserName()); ?> -->
+    <div class="item" onclick="removeFromPlaylist(this, '<?php echo $playlistId; ?>')">- Remove from playlist</div>
+</nav>
