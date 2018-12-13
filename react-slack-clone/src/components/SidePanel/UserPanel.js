@@ -16,7 +16,7 @@ class UserPanel extends React.Component {
         },
         {
             key: 'signout',
-            text: <span>Sign Out</span>
+            text: <span onClick={this.handleSignOut}>Sign Out</span>
         }
     ];
 
@@ -46,7 +46,7 @@ class UserPanel extends React.Component {
                     } options={this.dropDownOptions()} />
                  </Header>
              </Grid.Column>
-         </Grid>   
+         </Grid>
         );
     }
 }

@@ -11,5 +11,5 @@ $(document).ready(function() {
     }
 
     main.toggleClass("leftPadding");
-  });
+  })x;
 });
