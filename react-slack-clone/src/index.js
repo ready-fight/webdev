@@ -29,12 +29,11 @@ class Root extends React.Component {
     componentDidMount() {
         firebase.auth().onAuthStateChanged(user => {
             if (user) {
-                // console.log(user);
                 this.props.setUser(user);
                 this.props.history.push('/');
             } else {
-              this.props.history.push('/login');
-              this.props.clearUser();
+                this.props.history.push('/login');
+                this.props.clearUser();
             }
         });
     }
@@ -63,6 +62,6 @@ ReactDOM.render(
             <RootWithAuth />
         </Router>
     </Provider>,
-  document.getElementById('root')
+    document.getElementById('root')
 );
 registerServiceWorker();
