@@ -14,6 +14,7 @@ class Messages extends React.Component {
     messages: [],
     messagesLoading: true,
     channel: this.props.currentChannel,
+    isChannelStarred: false,
     user: this.props.currentUser,
     numUniqueUsers: '',
     searchTerm: '',
