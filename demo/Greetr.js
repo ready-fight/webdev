@@ -1,4 +1,4 @@
-;(function(global, $) {
+;(function() {
   var Greetr = function(firstName, lastName, language) {
     return new Greetr.init(firstName, lastName, language);
   };
@@ -101,14 +101,13 @@
   };
 
   Greetr.init = function(firstName, lastName, language) {
-    var self = this;
-    self.firstName = firstName || "";
-    self.lastName = lastName || "";
-    self.language = language || "en";
-    self.validate();
+    this.firstName = firstName || "";
+    this.lastName = lastName || "";
+    this.language = language || "en";
+    this.validate();
   };
 
   Greetr.init.prototype = Greetr.prototype;
 
-  global.Greetr = global.G$ = Greetr;
-})(window, jQuery);
+  window.Greetr = window.G$ = Greetr;
+})();
