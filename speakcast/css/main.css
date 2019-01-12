@@ -111,18 +111,22 @@ a {
   margin: 0;
 }
 
+.onNowLeft {
+  text-align: center;
+  margin-top: 5px;
+}
+
 .onNowLeft img {
   height: 100px;
 }
 
 .onNowCenter {
   max-width: 650px;
-  /* border: 1px solid red; */
-  margin: 40px 10px auto 40px;
+  text-align: justify;
+  margin: 15px auto;
 }
 
 .onNowRight {
-  /* border: 1px solid red; */
-  margin-top: 40px;
+  margin-top: 10px 20px;
   text-align: center;
 }
