@@ -40,11 +40,64 @@
         </div>
       </div>
       <div class="tab-menu">
-        <div class="tab" onClick="openTab('On Now')">On Now</div>
-        <div class="tab">Starting Soon</div>
-        <div class="tab">Featured</div>
-        <div class="tab">All SpeakCasts</div>
-        <div class="tab">Your SpeakCasts</div>
+        <div class="tab-menu-top">
+          <a href="#on_now"
+            ><div class="tab tablinks" onClick="openTab(event, 'on_now')">
+              On Now
+            </div>
+          </a>
+          <div class="tab tablinks" onClick="openTab(event, 'starting_soon')">
+            Starting Soon
+          </div>
+          <div class="tab tablinks" onClick="openTab(event, 'featured')">
+            Featured
+          </div>
+          <div class="tab tablinks" onClick="openTab(event, 'all_speakcasts')">
+            All SpeakCasts
+          </div>
+          <div class="tab tablinks" onClick="openTab(event, 'your_speakcasts')">
+            Your SpeakCasts
+          </div>
+          <div class="tab tablinks" onClick="openTab(event, 'options')">
+            Options
+          </div>
+        </div>
+        <div class="tab-menu-content">
+          <div id="on_now" class="tabcontent">
+            <div class="onNowLeft"><img src="img/light_bulb.jpg" alt="" /></div>
+            <div class="onNowCenter">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popularised in the 1960s with the release of Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum.
+            </div>
+            <div class="onNowRight">
+              <div class="keywords">keywords here</div>
+              <hr />
+              <div class="editSettings">
+                <ul>
+                  <li>Edit</li>
+                  <li>Cancel</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div id="starting_soon" class="tabcontent">Starting Soon Section</div>
+          <div id="featured" class="tabcontent">Featured Section</div>
+          <div id="all_speakcasts" class="tabcontent">
+            All SpeakCasts Section
+          </div>
+          <div id="your_speakcasts" class="tabcontent">
+            Your SpeakCasts Section
+          </div>
+          <div id="options" class="tabcontent">Options Section</div>
+        </div>
       </div>
     </div>
     <script src="main.js"></script>

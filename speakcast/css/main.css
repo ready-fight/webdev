@@ -7,26 +7,26 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Nunito Sans', sans-serif;
-}
-
-.nav-wrapper {
-  display: flex;
-  flex-direction: column;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 .nav-logo {
+  width: 200px;
+  margin: auto;
   text-align: center;
 }
 
 .nav-logo img {
-  height: 65px;
+  width: 100%;
 }
+
 
 .nav-menu {
   text-align: center;
-  display: flex;
-  flex-direction: column;
+}
+
+.tab .active {
+  background-color: #ccc;
 }
 
 .nav-menu ul {
@@ -52,22 +52,16 @@ html {
 }
 
 .sub-nav {
-  display: flex;
   text-align: center;
 }
 
-.speakBanner {
-  flex: 1;
-}
-
 .speakCreate {
-  flex: 1;
+  padding: 50px;
 }
 
-.speakText {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+.speakBanner img {
+  width: 100%;
+  height: 125px;
 }
 
 .speakText:hover {
@@ -83,15 +77,53 @@ html {
   background: #ddd;
 }
 
-.tab-menu {
-  display: flex;
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.tab-menu-top {
   text-align: center;
 }
 
-.tab-menu div {
-    border: 1px solid #a3a3a3;
-    padding: 20px;
-    background: #DDD;
-    flex: 1;
-    cursor: pointer;
+.tab {
+  transition: 0.3s;
+}
+
+.tab.active {
+  background: #ccc;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+}
+
+.tab-menu-top div {
+  border: 1px solid #a3a3a3;
+  padding: 20px;
+  background: #ddd;
+  cursor: pointer;
+}
+
+.editSettings ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.onNowLeft img {
+  height: 200px;
+}
+
+.onNowCenter {
+  max-width: 650px;
+  /* border: 1px solid red; */
+  margin: 40px 10px auto 40px;
+}
+
+.onNowRight {
+  /* border: 1px solid red; */
+  margin-top: 40px;
+  text-align: center;
 }

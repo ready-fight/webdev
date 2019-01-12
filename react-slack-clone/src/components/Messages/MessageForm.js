@@ -1,18 +1,18 @@
-import React from 'react';
-import uuidv4 from 'uuid/v4';
-import firebase from '../../firebase';
-import { Segment, Button, Input } from 'semantic-ui-react';
+import React from "react";
+import uuidv4 from "uuid/v4";
+import firebase from "../../firebase";
+import { Segment, Button, Input } from "semantic-ui-react";
 
-import FileModal from './FileModal';
-import ProgressBar from './ProgressBar';
+import FileModal from "./FileModal";
+import ProgressBar from "./ProgressBar";
 
 class MessageForm extends React.Component {
   state = {
     storageRef: firebase.storage().ref(),
     uploadTask: null,
-    uploadState: '',
+    uploadState: "",
     percentUploaded: 0,
-    message: '',
+    message: "",
     channel: this.props.currentChannel,
     user: this.props.currentUser,
     loading: false,
@@ -38,9 +38,9 @@ class MessageForm extends React.Component {
       }
     };
     if (fileUrl !== null) {
-      message['image'] = fileUrl;
+      message["image"] = fileUrl;
     } else {
-      message['content'] = this.state.message;
+      message["content"] = this.state.message;
     }
     return message;
   };
@@ -56,7 +56,7 @@ class MessageForm extends React.Component {
         .push()
         .set(this.createMessage())
         .then(() => {
-          this.setState({ loading: false, message: '', errors: [] });
+          this.setState({ loading: false, message: "", errors: [] });
         })
         .catch(err => {
           console.error(err);
@@ -67,18 +67,18 @@ class MessageForm extends React.Component {
         });
     } else {
       this.setState({
-        errors: this.state.errors.concat({ message: 'Add a message' })
+        errors: this.state.errors.concat({ message: "Add a message" })
       });
     }
   };
 
   getPath = () => {
-    if(this.props.isPrivateChannel) {
+    if (this.props.isPrivateChannel) {
       return `chat/private-${this.state.channel.id}`;
     } else {
-      return 'chat/public';
+      return "chat/public";
     }
-  }
+  };
 
   uploadFile = (file, metadata) => {
     const pathToUpload = this.state.channel.id;
@@ -87,12 +87,12 @@ class MessageForm extends React.Component {
 
     this.setState(
       {
-        uploadState: 'uploading',
+        uploadState: "uploading",
         uploadTask: this.state.storageRef.child(filePath).put(file, metadata)
       },
       () => {
         this.state.uploadTask.on(
-          'state_changed',
+          "state_changed",
           snap => {
             const percentUploaded = Math.round(
               (snap.bytesTransferred / snap.totalBytes) * 100
@@ -103,7 +103,7 @@ class MessageForm extends React.Component {
             console.error(err);
             this.setState({
               errors: this.state.errors.concat(err),
-              uploadState: 'error',
+              uploadState: "error",
               uploadTask: null
             });
           },
@@ -117,7 +117,7 @@ class MessageForm extends React.Component {
                 console.error(err);
                 this.setState({
                   errors: this.state.errors.concat(err),
-                  uploadState: 'error',
+                  uploadState: "error",
                   uploadTask: null
                 });
               });
@@ -133,7 +133,7 @@ class MessageForm extends React.Component {
       .push()
       .set(this.createMessage(fileUrl))
       .then(() => {
-        this.setState({ uploadState: 'done' });
+        this.setState({ uploadState: "done" });
       })
       .catch(err => {
         console.error(err);
@@ -154,13 +154,13 @@ class MessageForm extends React.Component {
           name="message"
           onChange={this.handleChange}
           value={message}
-          style={{ marginBottom: '0.7em' }}
-          label={<Button icon={'add'} />}
+          style={{ marginBottom: "0.7em" }}
+          label={<Button icon={"add"} />}
           labelPosition="left"
           className={
-            errors.some(error => error.message.includes('message'))
-              ? 'error'
-              : ''
+            errors.some(error => error.message.includes("message"))
+              ? "error"
+              : ""
           }
           placeholder="Write your message"
         />
