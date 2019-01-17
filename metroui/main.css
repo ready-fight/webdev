@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background: #08692d;
+  color: #fff;
+}
+
+.avatar {
+  margin: auto;
+}
+
+.avatar img {
+  width: 65px;
+  border: 2px solid #fff;
+}
+
+.name {
+  font-size: 1.5rem;
+}
+
+.subTitle {
+  text-indent: 5px;
+  color: #a5a5a5;
+  font-style: italic;
+}
+
+.bg-orange {
+  background: #ff7300;
+}
+
+.home-icon, .settings-icon, .camera-icon {
+  text-align: center;
+}
