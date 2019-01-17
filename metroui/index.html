@@ -1,50 +1,83 @@
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>MetroUI</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>MetroUI</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-    crossorigin="anonymous" />
-  <link rel="stylesheet" href="main.css">
-</head>
-
-<body>
-  <!-- START -->
-  <div class="container-fluid">
-    <div class="row">
-      <div class="start-header col-md-8 mt-3">
-        <h1 class="display-4">Start</h1>
-      </div>
-      <div class="user-info col-md-4 mt-3">
-        <div class="d-flex">
-          <div class="names">
-            <div class="name">Adrian</div>
-            <div class="subTitle">"Lorem ipsum lit deum."</div>
-          </div>
-          <div class="avatar"><img class="rounded-circle" src="avatar.png" alt=""></div>
+  <body>
+    <!-- START -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="start-header col-md-9 mt-3">
+          <h1 class="display-4">Start</h1>
         </div>
-      </div>
-    </div>
-  </div>
-  <!-- USER MENU -->
-  <section>
-    <div class="container-fluid d-flex pt-5">
-      <div class="row" style="border: 1px solid red">
-        <div class="col">
+        <div class="user-info col-md-3 mt-3">
           <div class="d-flex">
-            <div class="bg-primary">
-              <i class="fas fa-home fa-3x"></i>
-              <div>Show Desktop</div>
+            <div class="names">
+              <div class="name">Adrian</div>
+              <div class="subTitle">"Lorem ipsum lit deum."</div>
+            </div>
+            <div class="avatar m-auto">
+              <img class="rounded-circle" src="avatar.png" alt="" />
             </div>
           </div>
         </div>
       </div>
     </div>
-    </div>
-  </section>
-</body>
-
+    <!-- USER MENU -->
+    <section>
+      <div class="container-fluid pt-5">
+        <div class="row" style="border: 1px solid">
+          <div class="col-md-9">
+            <div class="d-flex">
+              <div class="bg-primary">
+                <div class="home-icon"><i class="fas fa-home fa-3x"></i></div>
+                <div class="home-desc">Show Desktop</div>
+              </div>
+              <div class="bg-orange">
+                <div class="settings-icon">
+                  <i class="fas fa-cog fa-3x"></i>
+                </div>
+                <div class="settings-desc">Settings</div>
+              </div>
+              <div class="bg-danger">
+                <div class="camera-icon">
+                  <i class="fas fa-camera fa-3x"></i>
+                </div>
+                <div class="camera-desc">Camera</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="d-flex">
+                <div class="bg-purp">
+                    <div class="ckoud-icon"><i class="fas fa-home fa-3x"></i></div>
+                    <div class="cloud-desc">Show Desktop</div>
+                  </div>
+                  <div class="bg-pink">
+                    <div class="cloud-icon">
+                      <i class="fas fa-cloud fa-3x"></i>
+                    </div>
+                    <div class="cloud-desc">Cloud</div>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>

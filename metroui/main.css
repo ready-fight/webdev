@@ -14,10 +14,6 @@ body {
   color: #fff;
 }
 
-.avatar {
-  margin: auto;
-}
-
 .avatar img {
   width: 65px;
   border: 2px solid #fff;
@@ -40,3 +36,80 @@ body {
 .home-icon, .settings-icon, .camera-icon {
   text-align: center;
 }
+
+.bg-primary, .bg-orange, bg-danger {
+  height: 180px;
+}
+
+.bg-primary {
+  width: 350px;
+  position: relative;
+}
+
+.bg-primary .home-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bg-primary .home-desc {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0 0 5px 8px;
+}
+
+.bg-orange {
+  width: 400px;
+  margin-left: 10px;
+  position: relative;
+}
+
+.bg-orange .settings-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bg-orange .settings-desc {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 0 0 5px 8px;
+}
+
+.bg-danger {
+  position: relative;
+  width: 180px;
+  margin-left: 10px;
+}
+
+.bg-danger .camera-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bg-danger .camera-desc {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 0 0 5px 8px;
+}
+
+.bg-purp {
+  width: 200px;
+  background: #b529c2;
+  height: 180px;
+}
+
+.bg-pink{
+  width: 200px;
+  background: pink;
+  height: 180px;
+  margin-left: 10px;
+}
+
