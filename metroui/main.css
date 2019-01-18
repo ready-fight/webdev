@@ -124,7 +124,10 @@ body {
 .bg-email,
 .bg-browser,
 .bg-skydrive,
-.bg-calendar {
+.bg-calendar,
+.bg-media,
+.bg-twitch,
+.bg-w-explorer {
   position: relative;
   margin-bottom: 0.625rem;
 }
@@ -253,7 +256,10 @@ body {
   .bg-success .favorites-desc,
   .bg-gallery .gallery-desc,
   .bg-lb .twitter-desc,
-  .bg-y .places-desc {
+  .bg-y .places-desc,
+  .bg-media .media-desc,
+  .bg-twitch .twitch-desc,
+  .bg-w-explorer .w-explorer-desc {
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0;
