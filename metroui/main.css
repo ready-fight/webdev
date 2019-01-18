@@ -29,87 +29,240 @@ body {
   font-style: italic;
 }
 
+.names {
+  padding: 0 8px 0 8px;
+}
+
+.bg-browser {
+  background: red;
+}
+
+.bg-email {
+  background: #332f2f;
+}
+
 .bg-orange {
+  width: 35%;
   background: #ff7300;
 }
 
-.home-icon, .settings-icon, .camera-icon {
-  text-align: center;
+.bg-twitch {
+  width: 45%;
+  background: #6441A5;
 }
 
-.bg-primary, .bg-orange, bg-danger {
+.bg-media {
+  background: #d3e90b;
+}
+
+.bg-primary,
+.bg-orange,
+.bg-danger,
+.bg-lb,
+.bg-y,
+.bg-success,
+.bg-facebook,
+.bg-facetime,
+.bg-w-explorer,
+.bg-media,
+.bg-gallery,
+.bg-calendar,
+.bg-email,
+.bg-skydrive,
+.bg-browser,
+.bg-twitch {
   height: 180px;
+  cursor: pointer;
 }
 
 .bg-primary {
-  width: 350px;
-  position: relative;
+  width: 35%;
 }
 
-.bg-primary .home-icon {
+.bg-lb {
+  background: #1fb4e6;
+}
+
+.bg-skydrive {
+  background: skyblue;
+}
+
+.bg-calendar {
+  width: 28.8%;
+}
+
+.bg-y {
+  background: #d3e90b;
+}
+
+.bg-gallery {
+  width: 28.8%;
+}
+
+.bg-gallery {
+  background: url('bg-img.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.bg-calendar {
+  background: #065470;
+}
+
+
+.bg-primary,
+.bg-orange,
+.bg-danger,
+.bg-facebook,
+.bg-facetime,
+.bg-twitch,
+.bg-w-explorer,
+.bg-success,
+.bg-lb,
+.bg-y,
+.bg-media,
+.bg-gallery,
+.bg-email,
+.bg-browser,
+.bg-skydrive,
+.bg-calendar {
+  position: relative;
+  margin-bottom: 0.625rem;
+}
+
+.bg-orange,
+.bg-danger,
+.bg-facetime,
+.bg-w-explorer,
+.bg-lb,
+.bg-y,
+.bg-gallery,
+.bg-email,
+.bg-calendar,
+.bg-skydrive {
+  margin-left: 0.625rem;
+}
+
+.bg-primary .home-icon,
+.bg-orange .settings-icon,
+.bg-danger .camera-icon,
+.bg-success .favorites-icon,
+.bg-facebook .facebook-icon,
+.bg-facetime .facetime-icon,
+.bg-w-explorer .w-explorer-icon,
+.bg-twitch .twitch-icon,
+.bg-media .media-icon,
+.bg-lb .twitter-icon,
+.bg-y .places-icon,
+.bg-browser .browser-icon,
+.bg-email .email-icon,
+.bg-gallery .places-icon,
+.bg-skydrive .skydrive-icon {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 
-.bg-primary .home-desc {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  margin: 0 0 5px 8px;
-}
-
-.bg-orange {
-  width: 400px;
-  margin-left: 10px;
-  position: relative;
-}
-
-.bg-orange .settings-icon {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.bg-orange .settings-desc {
+.bg-primary .home-desc,
+.bg-orange .settings-desc,
+.bg-danger .camera-desc,
+.bg-facebook .facebook-desc,
+.bg-facetime .facetime-desc,
+.bg-twitch .twitch-desc,
+.bg-success .favorites-desc,
+.bg-w-explorer .w-explorer-desc,
+.bg-y .places-desc,
+.bg-lb .twitter-desc,
+.bg-media .media-desc,
+.bg-gallery .gallery-desc,
+.bg-browser .browser-desc,
+.bg-email .email-desc,
+.bg-skydrive .skydrive-desc {
   position: absolute;
   left: 0;
   bottom: 0;
-  margin: 0 0 5px 8px;
+  margin: 0 0 8px 11px;
+  vertical-align: middle;
 }
 
-.bg-danger {
-  position: relative;
-  width: 180px;
-  margin-left: 10px;
+.bg-danger,
+.bg-success,
+.bg-lb,
+.bg-y,
+.bg-browser,
+.bg-email,
+.bg-skydrive {
+  width: 20%;
 }
 
-.bg-danger .camera-icon {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+.bg-facebook {
+  background: #3C5A99;
 }
 
-.bg-danger .camera-desc {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  margin: 0 0 5px 8px;
+.bg-facetime {
+  background: #34DA4F;
 }
 
-.bg-purp {
-  width: 200px;
-  background: #b529c2;
-  height: 180px;
+.bg-facebook,
+.bg-facetime,
+.bg-w-explorer {
+  width: 45%;
 }
 
-.bg-pink{
-  width: 200px;
-  background: pink;
-  height: 180px;
-  margin-left: 10px;
+.bg-w-explorer {
+  background: #dd0470;
 }
 
+.bg-media {
+  width: 92.5%;
+}
+
+@media(max-width: 767px) {
+  .bg-danger {
+    width: 30%;
+  }
+
+  .bg-facebook,
+  .bg-facetime,
+  .bg-twitch,
+  .bg-w-explorer {
+    width: 50%;
+  }
+
+  .bg-media {
+    width: 100%;
+  }
+
+  .bg-gallery,
+  .bg-skydrive {
+    width: 40%;
+  }
+
+  .names {
+    margin: auto;
+  }
+
+  .bg-primary .home-desc,
+  .bg-orange .settings-desc,
+  .bg-danger .camera-desc,
+  .bg-facebook .facebook-desc,
+  .bg-facetime .facetime-desc,
+  .bg-browser .browser-desc,
+  .bg-email .email-desc,
+  .bg-skydrive .skydrive-desc,
+  .bg-success .favorites-desc,
+  .bg-gallery .gallery-desc,
+  .bg-lb .twitter-desc,
+  .bg-y .places-desc {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .bg-calendar .calendar-desc,
+  .bg-calendar .calendar-icon,
+  .bg-calendar .calendar-date .day {
+    display: none;
+  }
+}

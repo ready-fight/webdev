@@ -1,83 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>MetroUI</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="main.css" />
-  </head>
 
-  <body>
-    <!-- START -->
-    <div class="container-fluid">
-      <div class="row">
-        <div class="start-header col-md-9 mt-3">
-          <h1 class="display-4">Start</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>MetroUI</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+</head>
+
+<body>
+  <!-- START -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="start-header col-md-9 mt-3">
+        <h1 class="display-4">Start</h1>
+      </div>
+      <div class="user-info col-md-3 mt-3">
+        <div class="d-flex">
+          <div class="names">
+            <div class="name">John Doe</div>
+            <div class="subTitle">"Lorem ipsum lit deum."</div>
+          </div>
+          <div class="avatar m-auto">
+            <img class="rounded-circle" src="avatar.png" alt="" />
+          </div>
         </div>
-        <div class="user-info col-md-3 mt-3">
+      </div>
+    </div>
+  </div>
+  <!-- USER MENU -->
+  <section>
+    <div class="container-fluid pt-5">
+      <div class="row">
+        <div class="col-md-8">
           <div class="d-flex">
-            <div class="names">
-              <div class="name">Adrian</div>
-              <div class="subTitle">"Lorem ipsum lit deum."</div>
+            <div class="bg-primary">
+              <div class="home-icon"><i class="fas fa-home fa-3x"></i></div>
+              <div class="home-desc">Show Desktop</div>
             </div>
-            <div class="avatar m-auto">
-              <img class="rounded-circle" src="avatar.png" alt="" />
+            <div class="bg-orange">
+              <div class="settings-icon">
+                <i class="fas fa-cog fa-3x"></i>
+              </div>
+              <div class="settings-desc">Settings</div>
+            </div>
+            <div class="bg-danger">
+              <div class="camera-icon">
+                <i class="fas fa-camera fa-3x"></i>
+              </div>
+              <div class="camera-desc">Camera</div>
+            </div>
+          </div>
+          <div class="d-flex">
+            <div class="bg-success">
+              <div class="favorites-icon"><i class="fas fa-star fa-3x"></i></div>
+              <div class="favorites-desc">Favorites</div>
+            </div>
+            <div class="bg-lb">
+              <div class="twitter-icon">
+                <i class="fab fa-twitter fa-3x"></i>
+              </div>
+              <div class="twitter-desc">Twitter</div>
+            </div>
+            <div class="bg-y">
+              <div class="places-icon">
+                <i class="fas fa-map-marker-alt fa-3x"></i>
+              </div>
+              <div class="places-desc">Places</div>
+            </div>
+            <div class="bg-gallery">
+              <div class="gallery-desc">Gallery</div>
+            </div>
+          </div>
+          <div class="d-flex">
+            <div class="bg-browser">
+              <div class="browser-icon"><i class="fas fa-globe fa-3x"></i></div>
+              <div class="browser-desc">Browser</div>
+            </div>
+            <div class="bg-email">
+              <div class="email-icon">
+                <i class="fas fa-envelope fa-3x"></i>
+              </div>
+              <div class="email-desc">E-mail</div>
+            </div>
+            <div class="bg-calendar d-flex">
+              <div class="d-flex flex-column">
+                <div class="calendar-desc mt-auto text-center p-2">Adrian Birthday Party At Sushi Restaurant at 19:00
+                  PM</div>
+                <div class="calendar-icon mt-auto ml-2 mb-1"><i class="fas fa-calendar-alt fa-1x"></i></div>
+              </div>
+              <div class="calendar-date m-auto">
+                <div class="display-3">25</div>
+                <div class="day">Monday</div>
+              </div>
+            </div>
+
+            <div class="bg-skydrive">
+              <div class="skydrive-icon">
+                <i class="fas fa-cloud fa-3x"></i>
+              </div>
+              <div class="skydrive-desc">SkyDrive</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="d-flex">
+            <div class="bg-facebook">
+              <div class="facebook-icon"><i class="fab fa-facebook-f fa-3x"></i></div>
+              <div class="facebook-desc">Facebook</div>
+            </div>
+            <div class="bg-facetime">
+              <div class="facetime-icon">
+                <i class="icon-facetime-video fa-3x"></i>
+              </div>
+              <div class="facetime-desc">Facetime</div>
+            </div>
+          </div>
+          <div class="d-flex">
+            <div class="bg-twitch">
+              <div class="twitch-icon"><i class="fab fa-twitch fa-3x"></i></div>
+              <div class="twitch-desc">Twitch</div>
+            </div>
+            <div class="bg-w-explorer">
+              <div class="w-explorer-icon"><i class="fas fa-folder fa-3x"></i></div>
+              <div class="w-explorer-desc">Windows Explorer</div>
+            </div>
+          </div>
+          <div class="d-flex">
+            <div class="bg-media">
+              <div class="media-icon">
+                <i class="fa fa-play fa-3x"></i>
+              </div>
+              <div class="media-desc">Media</div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- USER MENU -->
-    <section>
-      <div class="container-fluid pt-5">
-        <div class="row" style="border: 1px solid">
-          <div class="col-md-9">
-            <div class="d-flex">
-              <div class="bg-primary">
-                <div class="home-icon"><i class="fas fa-home fa-3x"></i></div>
-                <div class="home-desc">Show Desktop</div>
-              </div>
-              <div class="bg-orange">
-                <div class="settings-icon">
-                  <i class="fas fa-cog fa-3x"></i>
-                </div>
-                <div class="settings-desc">Settings</div>
-              </div>
-              <div class="bg-danger">
-                <div class="camera-icon">
-                  <i class="fas fa-camera fa-3x"></i>
-                </div>
-                <div class="camera-desc">Camera</div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="d-flex">
-                <div class="bg-purp">
-                    <div class="ckoud-icon"><i class="fas fa-home fa-3x"></i></div>
-                    <div class="cloud-desc">Show Desktop</div>
-                  </div>
-                  <div class="bg-pink">
-                    <div class="cloud-icon">
-                      <i class="fas fa-cloud fa-3x"></i>
-                    </div>
-                    <div class="cloud-desc">Cloud</div>
-                  </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </body>
+  </section>
+</body>
+
 </html>
