@@ -1,0 +1,107 @@
+body {
+  background: #333;
+  color: #FFF;
+}
+
+#top-button {
+  display: inline-block;
+  background-color: #616c9c;
+  width: 50px;
+  height: 50px;
+  transition: background-color .3s,
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+#apply-button {
+  display: inline-block;
+  background-color: #616c9c;
+  width: 150px;
+  height: 50px;
+  transition: background-color .3s,
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+#top-button.show,
+#apply-button.show,
+#character.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#top-button:hover,
+#apply-button:hover {
+  cursor: pointer;
+  background-color: #FFF;
+}
+
+#top-button:active,
+#apply-button.active {
+  background-color: #555;
+}
+
+#top-button:after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+
+#apply-button:after {
+  content: "応募";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: rgba(255, 255, 255, 0.897);
+}
+
+#top-button:hover:after,
+#apply-button:hover:after {
+  color: #000;
+}
+
+#searchResults {
+  padding-bottom: 75px;
+}
+
+#character img {
+  height: 75px;
+}
+
+#character {
+  position: fixed;
+  bottom: 15px;
+  margin-left: 5px;
+  left: 0;
+  transition: opacity .5s, visibility .5s;
+}
+
+@media(max-width: 767px) {
+  #character {
+    visibility: hidden;
+    transition: opacity .5s, visibility .5s;
+    opacity: 0;
+  }
+}
