@@ -1,24 +1,24 @@
 <?php
-    // Database configuration
-    require 'includes/config.php';
+// Database configuration
+require 'includes/config.php';
 
-    // Classes
-    require 'includes/classes/Artist.php';
-    require 'includes/classes/Album.php';
-    require 'includes/classes/Song.php';
-    require 'includes/classes/Constants.php';
-    require 'includes/classes/User.php';
+// Classes
+require 'includes/classes/Artist.php';
+require 'includes/classes/Album.php';
+require 'includes/classes/Song.php';
+require 'includes/classes/Constants.php';
+require 'includes/classes/User.php';
 
-    if(isset($_SESSION['userLoggedIn'])) {
-        $userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
-        $username = $userLoggedIn->getUsername();
-        echo "
+if (isset($_SESSION['userLoggedIn'])) {
+    $userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
+    $username = $userLoggedIn->getUsername();
+    echo "
             <script>
-                userLoggedIn = '$username'; 
+                userLoggedIn = '$username';
             </script>";
-    } else {
-        header('Location: register.php');
-    }
+} else {
+    header('Location: register.php');
+}
 ?>
 
 <html lang="en">
@@ -34,8 +34,8 @@
     <body>
         <div id="mainContainer">
             <div id="topContainer">
-                <?php require 'includes/navBarContainer.php'; ?>
+                <?php require 'includes/navBarContainer.php';?>
 
                 <div id="mainViewContainer">
-                
+
                     <div id="mainContent">

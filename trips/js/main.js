@@ -17,7 +17,7 @@ var btn = $('#top-button');
 var applyBtn = $('#apply-button');
 var character = $('#character');
 
-if ($(window).width() < 767) {
+if ($(window).width() > 767) {
   character.addClass('show');
 }
 
@@ -25,7 +25,16 @@ $(window).resize(function () {
   if ($(window).height() == $(document).height() || $(window).scrollTop() + $(window).height() != $(document).height()) {
     btn.removeClass('show');
     applyBtn.removeClass('show');
-    character.removeClass('show');
+
+    if ($(window).width() > 767) {
+      character.addClass('show');
+    } else {
+      character.removeClass('show');
+    }
+
+    if ($(window).height() < 470) {
+      character.removeClass('show');
+    }
 
   } else if ($(window).scrollTop() + $(window).height() == $(document).height()) {
     btn.addClass('show');
@@ -42,7 +51,15 @@ $(window).scroll(function () {
   } else {
     btn.removeClass('show');
     applyBtn.removeClass('show');
-    character.removeClass('show');
+    if ($(window).width() > 767) {
+      character.addClass('show');
+    } else {
+      character.removeClass('show');
+    }
+
+    if ($(window).height() < 470) {
+      character.removeClass('show');
+    }
   }
 });
 
@@ -58,10 +75,6 @@ btn.on('click', function (e) {
     scrollTop: 0
   }, '300');
 });
-
-$("#searchBtn").on('click', function () {
-  character.removeClass('show');
-})
 
 function searchResults() {
   $.post("search.php", {

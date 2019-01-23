@@ -95,7 +95,9 @@ body {
   bottom: 15px;
   margin-left: 5px;
   left: 0;
+  visibility: hidden;
   transition: opacity .5s, visibility .5s;
+  opacity: 0;
 }
 
 @media(max-width: 767px) {
