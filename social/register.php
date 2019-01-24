@@ -3,7 +3,7 @@
     /* Adrian Ruiz © Copyright January 23rd, 2019 */
     /* Created with PHP, Javascript, MySQl */
     /* With the assistance of the CSS Framework Bootstrap v4.2.1  */
-    /* Develope with ambition, create something amazing!  */
+    /* Develop with ambition, create something amazing!  */
 
     require 'includes/config.php';
 
@@ -79,7 +79,7 @@
 
         if($pwd !== $pwd2) {
             array_push ($error_array, "Passwords do not match.<br>");
-        } else if(preg_match(['/[^A-Za-z0-9]/', $pwd])) {
+        } else if(preg_match('/[^A-Za-z0-9]/', $pwd)) {
             array_push($error_array, "Your password can only contain English letters or numbers.<br>");
         }
 
@@ -125,13 +125,16 @@
             echo $_SESSION['email2'];
         }
         ?>" id="" required>
-         <br>
         <?php if(in_array("Emails do not match.<br>", $error_array)) echo "Emails do not match.<br>";
         else if(in_array("Invalid email format.<br>", $error_array)) echo "Invalid email format.<br>";
         else if(in_array("Email already in use<br>", $error_array)) echo "Email already in use.<br>";
         ?>
         <input type="password" name="reg_password" placeholder="Password" id="" required>
         <input type="password" name="reg_password2" placeholder="Confirm Password" id="" required>
+        <?php if(in_array("Passwords do not match.<br>", $error_array)) echo "Passwords do not match<br>";
+        else if(in_array("Your password can only contain English letters or numbers.<br>", $error_array)) echo "Your password can only contain English letters or numbers.<br>";
+        else if(in_array("Your password must be between 5 and 30 characters.<br>", $error_array)) echo "Your password must be between 5 and 30 characters.<br>";
+        ?>
         <input type="submit" name="register_button" value="Register">
     </form>
 </body>
