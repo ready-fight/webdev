@@ -159,6 +159,6 @@
         }
     }
     
-    $startUrl = "http://www.reecekenney.com";
+    $startUrl = "http://jpsubbers.web44.net/Japanese-Subtitles/";
     followLinks($startUrl);
 ?>
