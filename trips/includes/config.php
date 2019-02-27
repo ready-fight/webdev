@@ -5,7 +5,7 @@
 
     $timezone = date_default_timezone_set("Asia/Tokyo");
 
-    $con = new mysqli("localhost", "root", "root", "trips");
+    $con = new mysqli("localhost", "root", "", "trips");
 
     if($con->connect_error) {
         echo "Failed to connect. Error code: " . $con->connect_error;

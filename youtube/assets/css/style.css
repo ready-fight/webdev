@@ -132,6 +132,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   right: 0;
+  background: #FFF;
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
 
