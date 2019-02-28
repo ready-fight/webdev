@@ -8,6 +8,8 @@ if(!isset($_POST['uploadButton'])) {
   exit();
 }
 
+// 1) Create file upload data
+
 $videoUploadData = new VideoUploadData(
   $_FILES['fileInput'],
   $_POST['titleInput'],
@@ -17,6 +19,10 @@ $videoUploadData = new VideoUploadData(
   'REPLACE-THIS'
 );
 
+// 2) Process video data (upload)
+
 $videoProcessor = new VideoProcessor($con);
 $uploadSuccess = $videoProcessor->upload($videoUploadData);
+
+// 3) Check if upload was successful
 ?>
