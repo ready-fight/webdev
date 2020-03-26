@@ -1,6 +1,6 @@
 
-<div align="center"><img width="250" src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/about.jpeg"></div>
-
+<div align="center"><img width="300" src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/about.jpeg"></div>
+<br>
 <p>こんにちは！アメリカ出身のルイーズエイドリアンと申します！現在、日本にウェブプログラマーとして在住しております。様々な言語でのプログラミング経験はありますが、得意とするのがウェブアプリケーションです。
 
 僕のミッションはクライアントの問題をプログラミングで解決できるような事であれば、是非、役に立ちたいと思います。
