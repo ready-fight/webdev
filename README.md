@@ -8,10 +8,10 @@
 
 例ですが、人材募集をされている会社の為に人材との繋がりをより多くする為のウェブアプリを作っており、着々と応募者数が増えたと歓喜の声を上げてくださいます。</p>
 
-<div style="display: flex;">
-    <img style="object-fit: cover;" width="275" height="275" src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/portfolio/1.jpg">
-    <img style="object-fit: cover;" width="275" height="275" src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/portfolio/2.jpg">
-    <img style="object-fit: cover;" width="275" height="275" src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/portfolio/3.jpg">
-    <img style="object-fit: cover;" width="275" height="275" src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/portfolio/4.jpg">
-    <img style="object-fit: cover;" width="275" height="275" src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/portfolio/5.jpg">
+<div>
+    <img width="275" src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/portfolio/1.jpg">
+    <img width="275" src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/portfolio/2.jpg">
+    <img width="275" src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/portfolio/3.jpg">
+    <img width="275" src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/portfolio/4.jpg">
+    <img width="275" src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/portfolio/5.jpg">
 </div>
