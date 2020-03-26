@@ -7,7 +7,7 @@
 
 例ですが、人材募集をされている会社の為に人材との繋がりをより多くする為のウェブアプリを作っており、着々と応募者数が増えたと歓喜の声を上げてくださいます。</p>
 
-<div align="center">
+<div style="width: 300px; margin: 0 auto;">
 <div>
     <img src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/portfolio/1.jpg">
 </div>
