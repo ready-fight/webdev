@@ -1,4 +1,3 @@
-
 <div align="center"><img width="300" src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/about.jpeg"></div>
 <br>
 <p>こんにちは！アメリカ出身のルイーズエイドリアンと申します！現在、日本にウェブプログラマーとして在住しております。様々な言語でのプログラミング経験はありますが、得意とするのがウェブアプリケーションです。
@@ -10,8 +9,16 @@
 
 <div>
     <img src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/portfolio/1.jpg">
+</div>
+<div>
     <img src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/portfolio/2.jpg">
+</div>
+<div>
     <img src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/portfolio/3.jpg">
+</div>
+<div>
     <img src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/portfolio/4.jpg">
+</div>
+<div>
     <img src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/portfolio/5.jpg">
 </div>
