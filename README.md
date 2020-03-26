@@ -12,20 +12,18 @@
 成果物
 
 </h2>
-<div style="width: 300px; margin: 0 auto;">
-<div>
+<div align="center">
     <img src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/portfolio/1.jpg">
 </div>
-<div>
+<div align="center">
     <img src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/portfolio/2.jpg">
 </div>
-<div>
+<div align="center">
     <img src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/portfolio/3.jpg">
 </div>
-<div>
+<div align="center">
     <img src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/portfolio/4.jpg">
 </div>
-<div>
+<div align="center">
     <img src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/portfolio/5.jpg">
-</div>
 </div>
