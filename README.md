@@ -1,4 +1,5 @@
-<img style="width: 200px; height: 200px; object-fit: cover; display: block; margin: 0 auto;" src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/about.jpeg">
+
+<div align="center"><img width="250" src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/about.jpeg"></div>
 
 こんにちは！アメリカ出身のルイーズエイドリアンと申します！現在、日本にウェブプログラマーとして在住しております。様々な言語でのプログラミング経験はありますが、得意とするのがウェブアプリケーションです。
 
