@@ -12,6 +12,7 @@
 成果物
 
 </h2>
+<br>
 <div align="center">
     <img src="http://os3-366-16227.vs.sakura.ne.jp/portfolio/img/portfolio/1.jpg">
 </div>
